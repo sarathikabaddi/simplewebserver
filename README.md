@@ -23,40 +23,61 @@ Testing the webserver.
 ## PROGRAM:
 ```
 from http.server import HTTPServer, BaseHTTPRequestHandler
-content = """
-<!DOCTYPE html>
+content="""
 <html>
 <head>
-<title>My webserver</title>
+<title>Software companies</title>
 </head>
-<body>
-<h1>Top 5 Revenue Generating Companies<h1>
-<UL TYPE=“circle”>
-<LI> Amazon </LI>    
-<LI> Tesla </LI>
-<LI> TVS </LI>
-<LI> Malbro </LI>
-<LI> ITC </LI>
-</UL>
+<body bgcolor="aqua">
+<table align="center" border="3" bordercolor="white" cellspacing="3" cellpadding="4">
+<caption><h3>Top Five Revenue Generating Software Companies</h3></caption>
+<tr>
+<th>Rank</th>
+<th>Company</th>
+<th>Sales</th>
+<th>Nationality</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Microsoft</td>
+<td>57.9</td>
+<td>USA</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Oracle</td>
+<td>21.0</td>
+<td>USA</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SAP</td>
+<td>16.1</td>
+<td>GERMANY</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Computer Associates</td>
+<td>4.2</td>
+<td>USA</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Adobe</td>
+<td>3.4</td>
+<td>USA</td>
+</tr>
+</table>
 </body>
 </html>
-"""
-class myhandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        print("request received")
-        self.send_response(200)
-        self.send_header('content-type', 'text/html; charset=utf-8')
-        self.end_headers()
-        self.wfile.write(content.encode())
-server_address = ('',6969)
-httpd = HTTPServer(server_address,myhandler)
-print("my webserver is running...")
-httpd.serve_forever()
+
+
 ```
 
 
 ## OUTPUT:
-![277089614-d1810722-c326-49d3-8c37-a2101370839d](https://github.com/sarathikabaddi/simplewebserver/assets/149349756/bf62e8f2-d603-4e31-9417-ac77f6a45d22)
+
+![Screenshot 2024-05-07 100653](https://github.com/sarathikabaddi/simplewebserver/assets/149349756/24b28ed0-6f85-4e91-9bcc-70081aab757e)
 
 
 
